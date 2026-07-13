@@ -714,8 +714,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
         <div class="donut-wrap"><canvas id="dn-mp-epcm" width="70" height="70"></canvas><div class="donut-pct" id="mpEpcmDonutPct" style="font-size:11px">181</div></div>
         <div><div class="knum" id="mpEpcmKnum" style="font-size:24px">181 <span class="knum-sub">Headcount</span></div>
         <div class="kcard-details">
-          <div class="kcard-row"><span>Head Office</span><b id="mpEpcmPhoKnum">9</b></div>
-          <div class="kcard-row"><span>Site</span><b id="mpEpcmSiteKnum">172</b></div>
+          <div class="kcard-row"><span>Head Office</span><b id="mpEpcmPhoCount">9</b></div>
+          <div class="kcard-row"><span>Site</span><b id="mpEpcmSiteCount">172</b></div>
           <div class="kcard-row"><span>Manhours (Cum.)</span><b id="mpEpcmMH">2,119,116.5</b></div>
         </div></div>
       </div>
@@ -6697,8 +6697,8 @@ function handleUpload(event, type) {
         setKnum('mpOverallKnum', mp.Overall.manpower);
 
         const setPlain = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val.toLocaleString(); };
-        setPlain('mpEpcmPhoKnum', mp.EPCM_PHO.manpower);
-        setPlain('mpEpcmSiteKnum', mp.EPCM_Site.manpower);
+        setPlain('mpEpcmPhoCount', mp.EPCM_PHO.manpower);
+        setPlain('mpEpcmSiteCount', mp.EPCM_Site.manpower);
 
         // Manhours (Cum.) sub-text — was already being parsed but never rendered
         const setMH = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val.toLocaleString(undefined,{maximumFractionDigits:1}); };
@@ -8259,7 +8259,7 @@ const SNAPSHOT_KEY = 'wave_page_snapshot_v1';
 const SNAPSHOT_TEXT_IDS = [
   'hdrReportDate','hdrUpdatedDate','crossRegCount','ivcRegCount','whDetailCount','stockFitCount','stockPipeCount','todayProgressDateHdr','rbReportDateOverview','rbReportDateWH','rbReportDateWH03','psReportDate','psDataAsOf',
   'epcmPlanKnum','epcmActualKnum','epcmVarKnum','epcmPlanSub','epcmActualSub','epcmVarSub','epcmPlanDonutPct','epcmActualDonutPct','epcmVarDonutPct',
-  'mpEpcmKnum','mpEpcmPhoKnum','mpEpcmSiteKnum','mpEpcmMH','mpIcKnum','mpOverallKnum','mpIcMH','mpOverallMH','mpEpcmDonutPct',
+  'mpEpcmKnum','mpEpcmPhoCount','mpEpcmSiteCount','mpEpcmMH','mpIcKnum','mpOverallKnum','mpIcMH','mpOverallMH','mpEpcmDonutPct',
   'gaugeOverallPct','gaugeStatusLabel','ciScope','ciDone','ciToday','ciPct',
   'punchDiscTableTitle','punchSysTableTitle','punchADetailTitle','punchACount','punchReportDate','punchDataAsOf',
   ...['icCwp01','icCwp02','icCwp03','icCwp04','icEpcm'].flatMap(p => [p+'Plan',p+'Actual',p+'Var',p+'Status']),
